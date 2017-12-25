@@ -13,14 +13,14 @@ MYSQL_VERSION='5.7.20-0ubuntu0.16.04.1'
 
 
 
-# Update apt
-echo Updating apt repositories
-apt update
+# Update apt-get
+echo Updating apt-get repositories
+apt-get update
 
 # Install all patches as necessary, assuming 'y' to questions, and
 # supressing output
 echo Upgrade all available packages
-DEBIAN_FRONTEND=noninteractive apt upgrade -yq
+DEBIAN_FRONTEND=noninteractive apt-get upgrade -yq
 
 # Install MySQL
 echo Installing MySQL Server version ${MYSQL_VERSION}
@@ -30,4 +30,4 @@ echo         mysqladmin -u root password newpasswordgoeshere
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password PASSWORD'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password PASSWORD'
 
-DEBIAN_FRONTEND=noninteractive apt install -y mysql-server=${MYSQL_VERSION}
+DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server=${MYSQL_VERSION}
