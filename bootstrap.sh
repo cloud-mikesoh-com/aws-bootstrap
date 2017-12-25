@@ -24,5 +24,10 @@ DEBIAN_FRONTEND=noninteractive apt upgrade -yq
 
 # Install MySQL
 echo Installing MySQL Server version ${MYSQL_VERSION}
-echo apt install -y mysql-server=${MYSQL_VERSION}
-apt install -y mysql-server=${MYSQL_VERSION}
+echo     The password will be set to PASSWORD.  You can change this by
+echo     issuing the following command:
+echo         mysqladmin -u root password newpasswordgoeshere
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password PASSWORD'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password PASSWORD'
+
+DEBIAN_FRONTEND=noninteractive apt install -y mysql-server=${MYSQL_VERSION}
