@@ -1,0 +1,3 @@
+# mikesoh.com AWS Configuration
+
+More to come...
