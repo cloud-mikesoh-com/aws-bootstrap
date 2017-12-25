@@ -8,9 +8,8 @@
 # all of my PHP projects, such as my mail aliases program, 
 # squarecube, and myphpadmin.
 
-#### VERSION DECLARATION ####
-MYSQL_VERSION='5.7.20-0ubuntu0.16.04.1'
 
+#### VERSION DECLARATION ####
 
 
 # Update apt-get
@@ -22,12 +21,22 @@ apt-get update
 echo Upgrade all available packages
 DEBIAN_FRONTEND=noninteractive apt-get upgrade -yq
 
-# Install MySQL
-echo Installing MySQL Server version ${MYSQL_VERSION}
-echo     The password will be set to PASSWORD.  You can change this by
-echo     issuing the following command:
-echo         mysqladmin -u root password newpasswordgoeshere
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password PASSWORD'
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password PASSWORD'
+# Install pre-requisits
+echo Installing AWS CLI
+apt-get install -y awscli
 
-DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server=${MYSQL_VERSION}
+# Download AWS Bootstrap Files
+echo Downloading your bootstrap tarball.  It will be placed in /tmp
+curl -LkSs https://api.github.com/repos/sohmc/aws-bootstrap/tarball -o /tmp/master.tar.gz
+
+echo Untarring the tarball.
+tar -xzf /tmp/master.tar.gz -C /tmp
+
+echo Processing package bash files
+for f in /tmp/sohmc-aws-bootstrap-*/packages/*.sh
+do
+    echo Running Script $f
+    bash $f
+done
+
+echo cloud-init userdata processed.
