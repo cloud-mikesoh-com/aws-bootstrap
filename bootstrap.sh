@@ -24,4 +24,5 @@ DEBIAN_FRONTEND=noninteractive apt upgrade -yq
 
 # Install MySQL
 echo Installing MySQL Server version ${MYSQL_VERSION}
+echo apt install -y mysql-server=${MYSQL_VERSION}
 apt install -y mysql-server=${MYSQL_VERSION}
