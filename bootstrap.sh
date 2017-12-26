@@ -14,7 +14,7 @@
 
 # Update apt-get
 echo Updating apt-get repositories
-apt-get update
+apt-get update -yq
 
 # Install all patches as necessary, assuming 'y' to questions, and
 # supressing output
@@ -23,7 +23,7 @@ DEBIAN_FRONTEND=noninteractive apt-get upgrade -yq
 
 # Install pre-requisits
 echo Installing AWS CLI
-apt-get install -y awscli
+apt-get install -yq awscli
 
 # Download AWS Bootstrap Files
 echo Downloading your bootstrap tarball.  It will be placed in /tmp
