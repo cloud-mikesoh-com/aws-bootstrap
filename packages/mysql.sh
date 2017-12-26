@@ -23,7 +23,7 @@ tar xzf /tmp/mysqldump_5.7-*.tar.gz -C /tmp
 
 # Import the mysqldump
 echo Import the mysqldump file into the database
-mysql -u root -p=PASSWORD --force < /tmp/mysqldump.sql
+mysql -u root --password=PASSWORD --force < /tmp/mysqldump.sql
 
 echo Restart MySQL Database
 service mysql restart
