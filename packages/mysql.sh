@@ -15,15 +15,15 @@ DEBIAN_FRONTEND=noninteractive apt-get install -yq mysql-server=${MYSQL_VERSION}
 
 # Download the latest backup from S3 bucket
 echo Download the latest backup from the S3 Bucket
-aws s3 cp s3://mikesoh.com-galactica-backup/mysql-backups/latest/* /tmp/
+aws s3 cp s3://mikesoh.com-galactica-backup/mysql-backups/latest/ /tmp/ --recursive
 
 # Untar the tar file
 echo Untarring the file
-tar xzf /tmp/mysqldump_5.7-*.tar.gz
+tar xzf /tmp/mysqldump_5.7-*.tar.gz -C /tmp
 
 # Import the mysqldump
 echo Import the mysqldump file into the database
-mysql -u root -p --force < /tmp/mysqldump.sql
+mysql -u root -p=PASSWORD --force < /tmp/mysqldump.sql
 
 echo Restart MySQL Database
 service mysql restart
