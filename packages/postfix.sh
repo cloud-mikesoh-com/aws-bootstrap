@@ -56,3 +56,5 @@ postmap hash:/etc/postfix/sasl_passwd
 echo Compiling Virtual Lookups
 postmap /etc/postfix/virtual/*
 
+echo Starting Postfix...
+service postfix start
