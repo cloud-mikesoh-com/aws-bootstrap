@@ -33,7 +33,7 @@ aws s3 cp s3://mikesoh.com-galactica-backup/ssh_keys/bitbucket-deployment-keys/ 
 echo `ls -1 ~/.ssh/id_rsa* | wc -l` files downloaded.
 echo Public key as follows:
 echo ""
-cat ~/.ssh/id_rsa.key.pub
+cat ~/.ssh/id_rsa.pub
 echo ""
 
 
