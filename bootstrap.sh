@@ -50,7 +50,7 @@ echo Setting hostname to ${NEW_HOSTNAME}
 hostname ${NEW_HOSTNAME}
 
 echo Modifying /etc/hostname
-sed -ri 's/${OLD_HOSTNAME}/'"${NEW_HOSTNAME}"'/g' /etc/hostname
+sed -ri 's/'"${OLD_HOSTNAME}"'/'"${NEW_HOSTNAME}"'/g' /etc/hostname
 
 echo Modifying /etc/hosts
 sed -ri 's/^(127.0.0.1)\s+(\w+)$/\1 '"${NEW_HOSTNAME}"'/' /etc/hosts
