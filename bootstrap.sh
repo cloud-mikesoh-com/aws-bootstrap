@@ -13,8 +13,8 @@
 bootstrap_version='0.1.0'
 
 # Update apt-get
-#echo Updating apt-get repositories
-#apt-get update -yq
+echo Updating apt-get repositories
+apt-get update -yq
 
 # Install all patches as necessary, assuming 'y' to questions, and
 # supressing output
