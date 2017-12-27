@@ -37,6 +37,11 @@ cat ~/.ssh/id_rsa.key.pub
 echo ""
 
 
+# Populate SSH Server Keys
+echo Getting SSH Host keys for bitbucket and github
+ssh-keyscan github.com bitbucket.org >> ~/.ssh/known_hosts
+
+
 # Download AWS Bootstrap Files
 echo Downloading your bootstrap tarball.  It will be placed in /tmp
 #curl -LkSs https://api.github.com/repos/sohmc/aws-bootstrap/tarball/${bootstrap_version} -o /tmp/master.tar.gz
