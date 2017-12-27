@@ -48,8 +48,12 @@ OLD_HOSTNAME=`cat /etc/hostname`
 echo Current Hostname: ${OLD_HOSTNAME}
 echo Setting hostname to ${NEW_HOSTNAME}
 hostname ${NEW_HOSTNAME}
-sed -ri 's/${OLD_HOSTNAME}/${NEW_HOSTNAME}/g' /etc/hostname
-sed -ri 's/^(127.0.0.1)\s+(\w+)$/\1 ${NEW_HOSTNAME}/' /etc/hosts
+
+echo Modifying /etc/hostname
+sed -ri 's/${OLD_HOSTNAME}/'"${NEW_HOSTNAME}"'/g' /etc/hostname
+
+echo Modifying /etc/hosts
+sed -ri 's/^(127.0.0.1)\s+(\w+)$/\1 '"${NEW_HOSTNAME}"'/' /etc/hosts
 
 
 # Populate SSH Server Keys
