@@ -8,7 +8,7 @@ POSTFIX_REPO='git@bitbucket.org:sohmc/postfix-config.git'
 # Install Postfix
 echo Installing Postfix version ${POSTFIX_VERSION}
 
-DEBIAN_FRONTEND=noninteractive apt-get install -yq postfix=${POSTFIX_VERSION} postfix-mysql=${POSTFIX_VERSION}
+DEBIAN_FRONTEND=noninteractive apt-get install -yqq postfix=${POSTFIX_VERSION} postfix-mysql=${POSTFIX_VERSION}
 
 # Stop Postfix
 echo Stopping Postfix service
@@ -25,4 +25,4 @@ git clone -q ${POSTFIX_REPO} /tmp/postfix-config-repo
 
 
 # Install support packages
-apt-get install -yq procmail
+apt-get install -yqq procmail

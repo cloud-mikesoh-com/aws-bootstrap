@@ -14,7 +14,7 @@ bootstrap_version='0.1.0'
 
 # Update apt-get
 echo Updating apt-get repositories
-apt-get update -yq
+apt-get update -yqq
 
 # Install all patches as necessary, assuming 'y' to questions, and
 # supressing output
@@ -23,18 +23,21 @@ apt-get update -yq
 
 # Install pre-requisits
 echo Installing AWS CLI
-apt-get install -yq awscli
+apt-get install -yqq awscli
 
 
 # Install SSH deployment keys
 echo Downloading git deployment keys from S3
-aws s3 cp s3://mikesoh.com-galactica-backup/ssh_keys/bitbucket-deployment-keys/ ~/.ssh/ --recursive
+aws s3 cp s3://mikesoh.com-galactica-backup/ssh_keys/bitbucket-deployment-keys/ ~/.ssh/ --recursive --quiet
 
 echo `ls -1 ~/.ssh/id_rsa* | wc -l` files downloaded.
 echo Public key as follows:
 echo ""
 cat ~/.ssh/id_rsa.pub
 echo ""
+
+echo Making the private key readable by owner only.
+chmod 600 ~/.ssh/id_rsa
 
 
 # Populate SSH Server Keys
