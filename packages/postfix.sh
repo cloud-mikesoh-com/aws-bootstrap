@@ -28,7 +28,7 @@ echo Starting configuration of Postfix
 
 echo "===== main.cf ====="
 echo Setting relayhost to AWS SMTP Server
-sed -ir 's/^(relayhost)\s*=/\1 = [email-smtp.us-east-1.amazonaws.com]:587/' /etc/postfix/main.cf
+sed -ri 's/^(relayhost)\s*=/\1 = [email-smtp.us-east-1.amazonaws.com]:587/' /etc/postfix/main.cf
 
 echo Inserting SMTP Options...
 for t in /tmp/postfix-config-repo/postfix/main.cf-injections/*.cf
