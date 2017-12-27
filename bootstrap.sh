@@ -30,7 +30,7 @@ apt-get install -yq awscli
 echo Downloading git deployment keys from S3
 aws s3 cp s3://mikesoh.com-galactica-backup/ssh_keys/bitbucket-deployment-keys/ ~/.ssh/ --recursive
 
-echo `ls -1 ~/.ssh/id_rsa* | wc -l` file(s) downloaded.
+echo `ls -1 ~/.ssh/id_rsa* | wc -l` files downloaded.
 echo Public key as follows:
 echo ""
 cat ~/.ssh/id_rsa.key.pub
