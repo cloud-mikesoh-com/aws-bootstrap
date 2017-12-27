@@ -9,8 +9,9 @@
 # squarecube, and myphpadmin.
 
 
-#### VERSION DECLARATION ####
+#### VARIABLE DECLARATION ####
 bootstrap_version='0.1.0'
+NEW_HOSTNAME='husker.mikesoh.com'
 
 # Update apt-get
 echo Updating apt-get repositories
@@ -38,6 +39,17 @@ echo ""
 
 echo Making the private key readable by owner only.
 chmod 600 ~/.ssh/id_rsa
+
+
+# Set hostname
+# Instructions on how to do this without restarting:
+# https://www.cyberciti.biz/faq/ubuntu-change-hostname-command/
+OLD_HOSTNAME=`cat /etc/hostname`
+echo Current Hostname: ${OLD_HOSTNAME}
+echo Setting hostname to ${NEW_HOSTNAME}
+hostname ${NEW_HOSTNAME}
+sed -ri 's/${OLD_HOSTNAME}/${NEW_HOSTNAME}/g' /etc/hostname
+sed -ri 's/^(127.0.0.1)\s+(\w+)$/\1 ${NEW_HOSTNAME}/' /etc/hosts
 
 
 # Populate SSH Server Keys

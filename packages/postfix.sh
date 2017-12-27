@@ -8,13 +8,13 @@ POSTFIX_REPO='git@bitbucket.org:sohmc/postfix-config.git'
 # Install Postfix
 echo Installing Postfix version ${POSTFIX_VERSION}
 
-DEBIAN_FRONTEND=noninteractive apt-get install -yqq postfix=${POSTFIX_VERSION} postfix-mysql=${POSTFIX_VERSION}
+DEBIAN_FRONTEND=noninteractive apt-get install -yqq postfix=${POSTFIX_VERSION} postfix-mysql=${POSTFIX_VERSION} procmail
 
 # Stop Postfix
 echo Stopping Postfix service
 service postfix stop
 
-echo Moving postfix configuration files from /etc/postfix to /etc/postfix__DEFAULT
+echo Copying postfix configuration files from /etc/postfix to /etc/postfix__DEFAULT
 cp -r /etc/postfix /etc/postfix__DEFAULT
 
 # Clone the postfix configuration repository
@@ -23,6 +23,5 @@ echo "   from ${POSTFIX_REPO}"
 echo "   into /tmp/postfix-config-repo"
 git clone -q ${POSTFIX_REPO} /tmp/postfix-config-repo
 
+# Starting configuration of Postfix
 
-# Install support packages
-apt-get install -yqq procmail
