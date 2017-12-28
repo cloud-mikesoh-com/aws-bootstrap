@@ -57,4 +57,4 @@ All scripts within this repository are released under the [MIT
 License](./LICENSE.txt).
 
 All documentation within this repository are released under the [CC-BY
-License 2.0](https://creativecommons.org/licenses/by/2.0/).
+License 4.0](https://creativecommons.org/licenses/by/4.0/).
