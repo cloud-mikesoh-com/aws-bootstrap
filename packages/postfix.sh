@@ -8,7 +8,11 @@ POSTFIX_REPO='git@bitbucket.org:sohmc/postfix-config.git'
 # Install Postfix
 echo Installing Postfix version ${POSTFIX_VERSION}
 
-DEBIAN_FRONTEND=noninteractive apt-get install -yqq postfix=${POSTFIX_VERSION} postfix-mysql=${POSTFIX_VERSION} procmail
+DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
+    postfix=${POSTFIX_VERSION} \
+    postfix-mysql=${POSTFIX_VERSION} \
+    procmail \
+    spamassassin
 
 # Stop Postfix
 echo Stopping Postfix service
