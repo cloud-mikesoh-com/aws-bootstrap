@@ -10,7 +10,7 @@
 
 
 #### VARIABLE DECLARATION ####
-bootstrap_version='0.1.0'
+BOOTSTRAP_VERSION='0.2.0'
 NEW_HOSTNAME='husker.mikesoh.com'
 
 # Update apt-get
@@ -63,8 +63,7 @@ ssh-keyscan github.com bitbucket.org >> ~/.ssh/known_hosts
 
 # Download AWS Bootstrap Files
 echo Downloading your bootstrap tarball.  It will be placed in /tmp
-#curl -LkSs https://api.github.com/repos/sohmc/aws-bootstrap/tarball/${bootstrap_version} -o /tmp/master.tar.gz
-curl -LkSs https://api.github.com/repos/sohmc/aws-bootstrap/tarball/adding-postfix -o /tmp/master.tar.gz
+curl -LkSs https://api.github.com/repos/sohmc/aws-bootstrap/tarball/${BOOTSTRAP_VERSION} -o /tmp/master.tar.gz
 
 echo Untarring the tarball.
 tar -xzf /tmp/master.tar.gz -C /tmp
