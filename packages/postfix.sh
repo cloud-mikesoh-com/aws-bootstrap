@@ -27,8 +27,9 @@ git clone -q ${POSTFIX_REPO} /tmp/postfix-config-repo
 echo Starting configuration of Postfix
 
 echo "===== main.cf ====="
-echo Setting relayhost to AWS SMTP Server
-sed -ri 's/^(relayhost)\s*=/\1 = [email-smtp.us-east-1.amazonaws.com]:587/' /etc/postfix/main.cf
+echo Deleting blank relayhost configuration line
+echo "    as it gets added by the AWS SES configuration"
+sed -ri '/^relayhost\s*=\s*$/d' /etc/postfix/main.cf
 
 echo Inserting SMTP Options...
 for t in /tmp/postfix-config-repo/postfix/main.cf-injections/*.cf
@@ -50,10 +51,10 @@ cp /tmp/postfix-config-repo/postfix/sasl_passwd /etc/postfix/sasl_passwd
 echo ""
 
 echo Compiling lookup databases
-echo Compiling SASL Password
+echo "    Compiling SASL Password"
 postmap hash:/etc/postfix/sasl_passwd
 
-echo Compiling Virtual Lookups
+echo "    Compiling Virtual Lookups"
 postmap /etc/postfix/virtual/*
 
 echo Starting Postfix...
