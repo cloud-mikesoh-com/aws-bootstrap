@@ -51,10 +51,10 @@ of putting individual packages within the main file is that these
 packages will get installed before any other packages.
 
 
-## License
+## Licenses
 
 All scripts within this repository are released under the [MIT
 License](./LICENSE.txt).
 
-All Documentation within this repository are released under the CC-BY
-License.
+All documentation within this repository are released under the [CC-BY
+License 2.0](https://creativecommons.org/licenses/by/2.0/).
