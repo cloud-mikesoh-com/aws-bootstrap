@@ -24,8 +24,11 @@ any other debian flavor but I would assume that it works.
 ## Packages
 
 Files with the `.sh` file extension within the `packages/` will get 
-processed by the bootstrap script.  You must ensure that your package
-file is written in `bash`.
+processed by the bootstrap script in no guaranteed order.  At present,
+it looks like the `for` loop gets files in alphabetical order.  But do
+not rely on this.
+
+Package files must be written in `bash`.
 
 It is highly recommended that you utilize version numbers to ensure that
 you will have a consistant running instance.  You can find the version
@@ -35,21 +38,23 @@ Database](https://packages.ubuntu.com).
 The following packages will be installed:
 
 * MySQL 5.7
+* postfix 3.x
 
 
 ## Individual Packages
 
 If you want to install individual packages where you always need the
 latest version and does not require configuration (e.g. git, wget,
-python), you can either create a `.sh` file within packages or add them
-to the main `bootstrap.sh` file.  The benefit of putting individual
-packages within the main file is that these packages will get installed
-before any other packages.
+python), you can either create a `.sh` file within the `packages` 
+directory or add them to the main `bootstrap.sh` file.  The benefit 
+of putting individual packages within the main file is that these 
+packages will get installed before any other packages.
 
 
-## License
+## Licenses
 
-All scripts within this repository are released under the MIT License.
+All scripts within this repository are released under the [MIT
+License](./LICENSE.txt).
 
-All Documentation within this repository are released under the CC-BY
-License.
+All documentation within this repository are released under the [CC-BY
+License 2.0](https://creativecommons.org/licenses/by/2.0/).

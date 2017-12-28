@@ -11,11 +11,11 @@ echo "        mysqladmin -u root password newpasswordgoeshere"
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password PASSWORD'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password PASSWORD'
 
-DEBIAN_FRONTEND=noninteractive apt-get install -yq mysql-server=${MYSQL_VERSION}
+DEBIAN_FRONTEND=noninteractive apt-get install -yqq mysql-server=${MYSQL_VERSION}
 
 # Download the latest backup from S3 bucket
 echo Download the latest backup from the S3 Bucket
-aws s3 cp s3://mikesoh.com-galactica-backup/mysql-backups/latest/ /tmp/ --recursive
+aws s3 cp s3://mikesoh.com-galactica-backup/mysql-backups/latest/ /tmp/ --recursive --quiet
 
 # Untar the tar file
 echo Untarring the file
