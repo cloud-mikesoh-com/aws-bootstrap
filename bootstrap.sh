@@ -68,9 +68,8 @@ curl -LkSs https://api.github.com/repos/sohmc/aws-bootstrap/tarball/${BOOTSTRAP_
 echo Untarring the tarball.
 tar -xzf /tmp/master.tar.gz -C /tmp
 
-echo Processing package bash files
-for f in /tmp/sohmc-aws-bootstrap-*/packages/*.sh
-do
+echo Processing package bash files in alphabetical order
+for f in $( ls /tmp/sohmc-aws-bootstrap-*/packages/*.sh ); do
     echo Running Script $f
     bash $f
 done
