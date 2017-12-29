@@ -10,9 +10,10 @@ echo Downloading docker version ${PACKAGE_VERSION} from
 echo "    ${DOCKER_DL_URL}"
 curl -LkSs ${DOCKER_DL_URL} -o /tmp/docker.deb
 
+echo Installing dependencies
+DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
+    libltdl7
+
 echo Installing docker
 dpkg -i /tmp/docker.deb
-
-# Configure
-echo Do configuration stuff here
 
