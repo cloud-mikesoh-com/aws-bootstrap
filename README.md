@@ -39,6 +39,7 @@ The following packages will be installed:
 
 * MySQL 5.7
 * postfix 3.x
+* dovecot 2.2.x
 
 
 ## Individual Packages
