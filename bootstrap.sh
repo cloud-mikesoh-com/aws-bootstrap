@@ -69,8 +69,7 @@ echo Untarring the tarball.
 tar -xzf /tmp/master.tar.gz -C /tmp
 
 echo Processing package bash files
-for f in /tmp/sohmc-aws-bootstrap-*/packages/*.sh
-do
+for f in $( ls /tmp/sohmc-aws-bootstrap-*/packages/*.sh ); do
     echo Running Script $f
     bash $f
 done
