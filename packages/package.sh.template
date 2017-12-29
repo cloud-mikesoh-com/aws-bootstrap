@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#### VARIABLE DECLARATION ####
+PACKAGE_VERSION='1.0.0'
+
+# Install Package
+echo Installing the package you set to install
+
+DEBIAN_FRONTEND=noninteractive apt-get install -yqq some-package=${PACKAGE_VERSION}
+
+# Configure
+echo Do configuration stuff here
+
+
