@@ -10,7 +10,7 @@
 
 
 #### VARIABLE DECLARATION ####
-BOOTSTRAP_VERSION='0.2.0'
+BOOTSTRAP_VERSION='adding-dovecot'
 NEW_HOSTNAME='husker.mikesoh.com'
 
 # Update apt-get
