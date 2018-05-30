@@ -1,0 +1,24 @@
+{
+  "ImageId": "ami-aa2ea6d0",
+  "KeyName": "mike@starbuck (2016 Jun 24 0725)",
+  "SecurityGroupIds": ["sg-2bc94f4f", "sg-f9519788"],
+  "InstanceType": "t2.micro",
+  "Placement": {
+    "AvailabilityZone": "us-east-1a"
+  },
+  "BlockDeviceMappings": [
+    {
+      "DeviceName": "/dev/sda1",
+      "Ebs": {
+        "DeleteOnTermination": true,
+        "VolumeType": "gp2",
+        "VolumeSize": 8
+      }
+    }
+  ],
+  "IamInstanceProfile": {
+      "Arn": "arn:aws:iam::426869176820:instance-profile/ec2-user-role"
+  },
+            
+  "UserData": "IyEvYmluL2Jhc2gNCg0KIyBUaGlzIGZpbGUgc2hvdWxkIGJlIGNvcGllZCBpbnRvIHRoZSBVc2VyIERhdGEgc2VjdGlvbiBvZiBjcmVhdGluZyBBV1MNCiMgRUMyIGluc3RhY2VzLg0KZWNobyBEb3dubG9hZGluZyBCb290c3RyYXAgZnJvbSBnaXRAZ2l0aHViLmNvbTpzb2htYy9hd3MtYm9vdHN0cmFwL2Jvb3RzdHJhcC5zaA0KYmFzaCA8KGN1cmwgLXMgaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3NvaG1jL2F3cy1ib290c3RyYXAvbWFzdGVyL2Jvb3RzdHJhcC5zaCkNCiMNCiM="
+}
