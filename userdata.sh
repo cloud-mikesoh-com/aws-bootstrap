@@ -7,4 +7,3 @@ BOOTSTRAP_FILE='https://raw.githubusercontent.com/sohmc/aws-bootstrap/adding-dov
 echo Downloading Bootstrap from ${BOOTSTRAP_FILE}
 bash <(curl -s ${BOOTSTRAP_FILE})
 
-

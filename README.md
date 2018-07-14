@@ -23,9 +23,10 @@ any other debian flavor but I would assume that it works.
 
 ## Packages
 
-Files with the `.sh` file extension within the `packages/` will get 
-processed by the bootstrap script in `ls` order, the default being
-alphabetical.
+Files with the `.sh` file extension within the `packages/` directory will 
+get processed by the bootstrap script in no guaranteed order.  At present,
+it looks like the `for` loop gets files in alphabetical order.  But do
+not rely on this.
 
 Package files must be written in `bash`.
 
