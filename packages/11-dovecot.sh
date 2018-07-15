@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #### VARIABLE DECLARATION ####
-PACKAGE_VERSION='1:2.2.22-1ubuntu2.4'
+PACKAGE_VERSION='1:2.2.22-1ubuntu2.7'
 
 # Install Package
 echo Installing dovecot version ${PACKAGE_VERSION}
