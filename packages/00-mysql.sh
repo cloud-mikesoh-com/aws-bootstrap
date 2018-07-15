@@ -19,7 +19,7 @@ aws s3 cp s3://mikesoh.com-galactica-backup/mysql-backups/latest/ /tmp/ --recurs
 
 # Untar the tar file
 echo Untarring the file
-tar xzf /tmp/mysqldump_5.7-*.tar.gz -C /tmp
+tar xzf /tmp/mysqldump-*.tar.gz -C /tmp
 
 # Import the mysqldump
 echo Import the mysqldump file into the database
