@@ -10,7 +10,7 @@
 
 
 #### VARIABLE DECLARATION ####
-BOOTSTRAP_VERSION='0.3.0'
+BOOTSTRAP_VERSION='changing-version-numbers'
 NEW_HOSTNAME='husker.mikesoh.com'
 
 # Update apt-get
