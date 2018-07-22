@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #### VERSION DECLARATION ####
-MYSQL_VERSION='5.7.22-0ubuntu0.16.04.1'
+MYSQL_VERSION='5.7.\*'
 
 # Install MySQL
 echo Installing MySQL Server version ${MYSQL_VERSION}
