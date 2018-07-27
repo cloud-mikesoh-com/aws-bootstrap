@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #### VERSION DECLARATION ####
-MYSQL_VERSION='5.7.\*'
+MYSQL_VERSION='5.7.*'
 
 # Install MySQL
 echo Installing MySQL Server version ${MYSQL_VERSION}
@@ -11,7 +11,8 @@ echo "        mysqladmin -u root password newpasswordgoeshere"
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password PASSWORD'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password PASSWORD'
 
-DEBIAN_FRONTEND=noninteractive apt-get install -yqq mysql-server=5.7.*
+DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
+                    mysql-server=${MYSQL_VERSION}
 
 # Download the latest backup from S3 bucket
 echo Download the latest backup from the S3 Bucket
