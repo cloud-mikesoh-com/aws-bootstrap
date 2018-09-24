@@ -1,5 +1,5 @@
 {
-  "ImageId": "ami-aa2ea6d0",
+  "ImageId": "ami-0ac019f4fcb7cb7e6",
   "KeyName": "mike@starbuck (2016 Jun 24 0725)",
   "SecurityGroupIds": ["sg-2bc94f4f", "sg-f9519788"],
   "InstanceType": "t2.micro",
@@ -20,5 +20,5 @@
       "Arn": "arn:aws:iam::426869176820:instance-profile/ec2-user-role"
   },
             
-  "UserData": "IyEvYmluL2Jhc2gKCiMgVGhpcyBmaWxlIHNob3VsZCBiZSBjb3BpZWQgaW50byB0aGUgVXNlciBEYXRhIHNlY3Rpb24gb2YgY3JlYXRpbmcgQVdTCiMgRUMyIGluc3RhY2VzLgpCT09UU1RSQVBfRklMRT0naHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3NvaG1jL2F3cy1ib290c3RyYXAvYWRkaW5nLWRvdmVjb3QvYm9vdHN0cmFwLnNoJwoKZWNobyBEb3dubG9hZGluZyBCb290c3RyYXAgZnJvbSAke0JPT1RTVFJBUF9GSUxFfQpiYXNoIDwoY3VybCAtcyAke0JPT1RTVFJBUF9GSUxFfSkKCg=="
+  "UserData": "$USERDATA"
 }

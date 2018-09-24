@@ -62,7 +62,8 @@ ssh-keyscan github.com bitbucket.org >> ~/.ssh/known_hosts
 
 
 # Download AWS Bootstrap Files
-echo Downloading your bootstrap tarball.  It will be placed in /tmp
+echo Downloading your bootstrap tarball version ${BOOTSTRAP_VERSION}.  
+echo     It will be placed in /tmp
 curl -LkSs https://api.github.com/repos/sohmc/aws-bootstrap/tarball/${BOOTSTRAP_VERSION} -o /tmp/master.tar.gz
 
 echo Untarring the tarball.
