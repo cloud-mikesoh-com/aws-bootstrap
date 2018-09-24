@@ -1,19 +1,23 @@
 #!/bin/bash
 
-#### VARIABLE DECLARATION ####
-UBUNTU_VERSION=xenial
-PACKAGE_VERSION='17.12.0~ce-0~ubuntu'
+# These script takes the commands relayed via 
+# https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
-# Download the docker installation file
-DOCKER_DL_URL="https://download.docker.com/linux/ubuntu/dists/${UBUNTU_VERSION}/pool/stable/amd64/docker-ce_${PACKAGE_VERSION}_amd64.deb"
-echo Downloading docker version ${PACKAGE_VERSION} from
-echo "    ${DOCKER_DL_URL}"
-curl -LkSs ${DOCKER_DL_URL} -o /tmp/docker.deb
+echo Downloading Docker\'s official GPG key...
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
+    apt-key add -
 
-echo Installing dependencies
-DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
-    libltdl7
+echo Inspecting fingerprint...
+apt-key fingerprint 0EBFCD88
+
+echo Adding repository...
+add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+echo Updating repositories
+apt-get update
 
 echo Installing docker
-dpkg -i /tmp/docker.deb
-
+apt-get install docker-ce
