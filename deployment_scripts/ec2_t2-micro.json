@@ -1,5 +1,5 @@
 {
-  "ImageId": "ami-aa2ea6d0",
+  "ImageId": "ami-0ac019f4fcb7cb7e6",
   "KeyName": "mike@starbuck (2016 Jun 24 0725)",
   "SecurityGroupIds": ["sg-2bc94f4f", "sg-f9519788"],
   "InstanceType": "t2.micro",
@@ -20,5 +20,5 @@
       "Arn": "arn:aws:iam::426869176820:instance-profile/ec2-user-role"
   },
             
-  "UserData": "IyEvYmluL2Jhc2gKCiMgVGhpcyBmaWxlIHNob3VsZCBiZSBjb3BpZWQgaW50byB0aGUgVXNlciBEYXRhIHNlY3Rpb24gb2YgY3JlYXRpbmcgQVdTCiMgRUMyIGluc3RhbmNlcy4KQk9PVFNUUkFQX0ZJTEU9J2h0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9zb2htYy9hd3MtYm9vdHN0cmFwL2NoYW5naW5nLXZlcnNpb24tbnVtYmVycy9ib290c3RyYXAuc2gnCgplY2hvIERvd25sb2FkaW5nIEJvb3RzdHJhcCBmcm9tICR7Qk9PVFNUUkFQX0ZJTEV9CmJhc2ggPChjdXJsIC1zICR7Qk9PVFNUUkFQX0ZJTEV9KQoKCg=="
+  "UserData": "IyEvYmluL2Jhc2gKCiMgVGhpcyBmaWxlIHNob3VsZCBiZSBjb3BpZWQgaW50byB0aGUgVXNlciBEYXRhIHNlY3Rpb24gb2YgY3JlYXRpbmcgQVdTCiMgRUMyIGluc3RhbmNlcy4KQlJBTkNIX05BTUU9ImNoYW5naW5nLXZlcnNpb24tbnVtYmVycyIKQk9PVFNUUkFQX0ZJTEU9Imh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9zb2htYy9hd3MtYm9vdHN0cmFwLyR7QlJBTkNIX05BTUV9L2Jvb3RzdHJhcC5zaCIKCmVjaG8gRG93bmxvYWRpbmcgQm9vdHN0cmFwIGZyb20gJHtCT09UU1RSQVBfRklMRX0KYmFzaCA8KGN1cmwgLXMgJHtCT09UU1RSQVBfRklMRX0pCgoK"
 }
