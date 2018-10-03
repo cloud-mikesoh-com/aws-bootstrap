@@ -7,6 +7,9 @@ echo Installing dovecot
 
 DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
     dovecot-core \
+    dovecot-pop3d \
+    dovecot-imapd \
+    dovecot-antispam \
     dovecot-mysql 
 
 
