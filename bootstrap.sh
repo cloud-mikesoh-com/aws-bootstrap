@@ -76,3 +76,8 @@ for f in $( ls /tmp/sohmc-aws-bootstrap-*/packages/*.sh ); do
 done
 
 echo cloud-init userdata processed.
+echo Setting shutdown for 2 hours in case I forget...
+shutdown -h +120
+
+echo You may disable this by running the following command:
+echo     sudo shutdown -c
