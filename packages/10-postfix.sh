@@ -1,16 +1,15 @@
 #!/bin/bash
 
 #### VARIABLE DECLARATION ####
-POSTFIX_VERSION='3.1.0-3'
 POSTFIX_REPO='git@bitbucket.org:sohmc/postfix-config.git'
 
 
 # Install Postfix
-echo Installing Postfix version ${POSTFIX_VERSION}
+echo Installing Postfix
 
 DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
-    postfix=${POSTFIX_VERSION} \
-    postfix-mysql=${POSTFIX_VERSION} \
+    postfix \
+    postfix-mysql \
     procmail \
     spamassassin
 
