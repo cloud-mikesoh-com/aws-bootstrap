@@ -10,10 +10,11 @@
 
 
 #### VARIABLE DECLARATION ####
-BOOTSTRAP_VERSION='adding-dovecot'
+BOOTSTRAP_VERSION='master'
 NEW_HOSTNAME='husker.mikesoh.com'
 
 # Download AWS Bootstrap Files
+echo BRANCH_NAME: ${BRANCH_NAME}
 echo Downloading your bootstrap tarball version ${BOOTSTRAP_VERSION}.  
 echo     It will be placed in /tmp
 curl -LkSs https://api.github.com/repos/sohmc/aws-bootstrap/tarball/${BOOTSTRAP_VERSION} -o /tmp/master.tar.gz
