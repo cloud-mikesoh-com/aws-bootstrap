@@ -10,14 +10,15 @@
 
 
 #### VARIABLE DECLARATION ####
-BOOTSTRAP_VERSION='master'
 NEW_HOSTNAME='husker.mikesoh.com'
 
 # Download AWS Bootstrap Files
+# Branch name is declared in the userdata.sh file, where this bootstrap
+# is initially loaded.
 echo BRANCH_NAME: ${BRANCH_NAME}
-echo Downloading your bootstrap tarball version ${BOOTSTRAP_VERSION}.  
+echo Downloading your bootstrap tarball version ${BRANCH_NAME}.  
 echo     It will be placed in /tmp
-curl -LkSs https://api.github.com/repos/sohmc/aws-bootstrap/tarball/${BOOTSTRAP_VERSION} -o /tmp/master.tar.gz
+curl -LkSs https://api.github.com/repos/sohmc/aws-bootstrap/tarball/${BRANCH_NAME} -o /tmp/master.tar.gz
 
 echo Untarring the tarball.
 tar -xzf /tmp/master.tar.gz -C /tmp
