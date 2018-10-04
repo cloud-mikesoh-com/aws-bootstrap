@@ -9,4 +9,3 @@ echo Downloading Bootstrap from ${BOOTSTRAP_FILE}
 export BRANCH_NAME
 bash <(curl -s ${BOOTSTRAP_FILE})
 
-

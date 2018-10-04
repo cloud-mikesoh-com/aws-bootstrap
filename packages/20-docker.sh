@@ -19,5 +19,7 @@ add-apt-repository \
 echo Updating repositories
 apt-get update
 
-echo Installing docker
-apt-get install docker-ce
+echo Installing docker and docker-compose
+DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
+    docker-ce \
+    docker-compose

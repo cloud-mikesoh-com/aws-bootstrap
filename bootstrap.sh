@@ -10,7 +10,7 @@
 
 
 #### VARIABLE DECLARATION ####
-BOOTSTRAP_VERSION='0.3.0'
+BOOTSTRAP_VERSION='adding-dovecot'
 NEW_HOSTNAME='husker.mikesoh.com'
 
 # Update apt-get
@@ -69,10 +69,15 @@ curl -LkSs https://api.github.com/repos/sohmc/aws-bootstrap/tarball/${BOOTSTRAP_
 echo Untarring the tarball.
 tar -xzf /tmp/master.tar.gz -C /tmp
 
-echo Processing package bash files
+echo Processing package bash files in alphabetical order
 for f in $( ls /tmp/sohmc-aws-bootstrap-*/packages/*.sh ); do
     echo Running Script $f
     bash $f
 done
 
 echo cloud-init userdata processed.
+echo Setting shutdown for 2 hours in case I forget...
+shutdown -h +120
+
+echo You may disable this by running the following command:
+echo     sudo shutdown -c
