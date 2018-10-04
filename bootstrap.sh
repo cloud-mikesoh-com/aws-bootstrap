@@ -13,6 +13,22 @@
 BOOTSTRAP_VERSION='adding-dovecot'
 NEW_HOSTNAME='husker.mikesoh.com'
 
+# Download AWS Bootstrap Files
+echo Downloading your bootstrap tarball version ${BOOTSTRAP_VERSION}.  
+echo     It will be placed in /tmp
+curl -LkSs https://api.github.com/repos/sohmc/aws-bootstrap/tarball/${BOOTSTRAP_VERSION} -o /tmp/master.tar.gz
+
+echo Untarring the tarball.
+tar -xzf /tmp/master.tar.gz -C /tmp
+
+
+#### Add Additional Repositories ####
+echo Adding repositories declared in the ./repositories directory
+for f in $( ls /tmp/sohmc-aws-bootstrap-*/repositories/*.sh ); do
+    echo Running Script $f
+    bash $f
+done
+
 # Update apt-get
 echo Updating apt-get repositories
 apt-get update -yqq
@@ -25,7 +41,6 @@ DEBIAN_FRONTEND=noninteractive apt-get upgrade -yq
 # Install pre-requisits
 echo Installing AWS CLI
 apt-get install -yqq awscli
-
 
 # Install SSH deployment keys
 echo Downloading git deployment keys from S3
@@ -59,15 +74,6 @@ sed -ri 's/^(127.0.0.1)\s+(\w+)$/\1 '"${NEW_HOSTNAME}"'/' /etc/hosts
 # Populate SSH Server Keys
 echo Getting SSH Host keys for bitbucket and github
 ssh-keyscan github.com bitbucket.org >> ~/.ssh/known_hosts
-
-
-# Download AWS Bootstrap Files
-echo Downloading your bootstrap tarball version ${BOOTSTRAP_VERSION}.  
-echo     It will be placed in /tmp
-curl -LkSs https://api.github.com/repos/sohmc/aws-bootstrap/tarball/${BOOTSTRAP_VERSION} -o /tmp/master.tar.gz
-
-echo Untarring the tarball.
-tar -xzf /tmp/master.tar.gz -C /tmp
 
 echo Processing package bash files in alphabetical order
 for f in $( ls /tmp/sohmc-aws-bootstrap-*/packages/*.sh ); do
