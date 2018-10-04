@@ -14,7 +14,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
 
 
 echo Stopping dovecot...
-systemctl stop dovecot
+service dovecot stop
 
 echo Copying dovecot configuration files from /etc/dovecot to /etc/dovecot__DEFAULT
 cp -rf /etc/dovecot /etc/dovecot__DEFAULT
@@ -31,4 +31,4 @@ echo Enabling authentication via passwd file
 sed -ri 's/^#(!include auth-passwdfile.conf.ext)$/\1/' /etc/dovecot/conf.d/10-auth.conf
 
 echo Starting dovecot...
-systemctl start dovecot
+service dovecot start
