@@ -2,7 +2,7 @@
   "ImageId": "ami-0ac019f4fcb7cb7e6",
   "KeyName": "mike@starbuck (2016 Jun 24 0725)",
   "SecurityGroupIds": ["sg-2bc94f4f", "sg-f9519788"],
-  "InstanceType": "t2.micro",
+  "InstanceType": "t3.micro",
   "Placement": {
     "AvailabilityZone": "us-east-1a"
   },
