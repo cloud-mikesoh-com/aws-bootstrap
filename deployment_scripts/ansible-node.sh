@@ -14,6 +14,3 @@ echo Installing AWS CLI and Python 3
 apt-get install -yqq awscli python3
 
 echo cloud-init userdata processed.
-echo Setting shutdown for 2 hours in case I forget...
-shutdown -h +120
-
