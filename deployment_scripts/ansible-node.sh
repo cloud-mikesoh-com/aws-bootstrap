@@ -13,4 +13,9 @@ DEBIAN_FRONTEND=noninteractive apt-get upgrade -yq
 echo Installing AWS CLI and Python 3
 apt-get install -yqq awscli python3
 
+# Set timezone to US/Eastern
+# https://help.ubuntu.com/community/UbuntuTime
+echo "US/Eastern" | sudo tee /etc/timezone
+dpkg-reconfigure --frontend noninteractive tzdata
+
 echo cloud-init userdata processed.
