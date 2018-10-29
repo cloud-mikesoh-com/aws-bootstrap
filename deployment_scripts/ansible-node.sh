@@ -11,7 +11,7 @@ DEBIAN_FRONTEND=noninteractive apt-get upgrade -yq
 
 # Install pre-requisits
 echo Installing AWS CLI and Python 3
-apt-get install -yqq awscli python3
+apt-get install -yqq awscli python3 python3-pip
 
 # Set timezone to US/Eastern
 # https://help.ubuntu.com/community/UbuntuTime
