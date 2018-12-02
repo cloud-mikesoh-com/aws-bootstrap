@@ -7,7 +7,7 @@ This `README` is provided to track the current version of the Ubuntu AMI
 that is used in the `ec2_t2-micro.json` file.  Since Amazon does not
 keep track of historical AMIs, it's left to third parties.  Fortunately,
 [Ubuntu has a website dedicated to their
-AMIs](https://cloud-images.ubuntu.com/locator/ec2/).
+AMIs](https://cloud-images.ubuntu.com/locator/).
 
 Currently, this deployment script uses the following AMI:
 
