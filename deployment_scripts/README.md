@@ -9,6 +9,10 @@ keep track of historical AMIs, it's left to third parties.  Fortunately,
 [Ubuntu has a website dedicated to their
 AMIs](https://cloud-images.ubuntu.com/locator/).
 
+AMIs are updated by ubuntu on a monthly basis.  When configured
+correctly, this repository and subsequent scripts can be used to
+redeploy using the latest AMI.
+
 Currently, this deployment script uses the following AMI:
 
 * AMI ID: ami-0ac019f4fcb7cb7e6
@@ -18,4 +22,4 @@ Currently, this deployment script uses the following AMI:
 * Release date: 20180912
 
 In theory, you should be able to use this script against any current
-Ubuntu AMI, but it is tested against the above details.
+Ubuntu AMI, but it is tested against the image listed above.
