@@ -1,5 +1,5 @@
 {
-  "ImageId": "ami-0ac019f4fcb7cb7e6",
+  "ImageId": "ami-0d2505740b82f7948",
   "KeyName": "mike@starbuck (2016 Jun 24 0725)",
   "SecurityGroupIds": ["sg-2bc94f4f", "sg-f9519788"],
   "InstanceType": "t3.micro",
