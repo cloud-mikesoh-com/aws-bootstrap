@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [ -z ${1} ] || [ ! -f ${1} ]; then
-    echo "usage: ${0} <filename of user data script>"
-else 
-    USERDATA=`cat ${1} | base64 -w 0`
+FILE=../userdata.sh
+
+run_me () {
+    USERDATA=`cat ${FILE} | base64 -w 0`
 
     if [ -e tmp.json ]; then
         rm tmp.json
@@ -17,4 +17,16 @@ else
         --launch-specification file://tmp.json
 
     rm tmp.json
+}
+
+
+if [ -z ${1} ]; then
+    echo "No parameter provided.  Default is ${FILE}".
+elif [ ! -f ${1} ]; then
+    echo "usage: ${0} <filename of userdata script to run at instance creation>"
+    exit 1
+else
+    FILE=${1}
 fi
+
+run_me
