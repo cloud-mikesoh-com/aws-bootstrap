@@ -4,7 +4,7 @@
 # By Michael Soh
 #
 # This bootstrap installs MySQL and Docker.  Docker is used to 
-# install an apache web server with PHP, # which then serve 
+# install an apache web server with PHP, which then serve 
 # all of my PHP projects, such as my mail aliases program, 
 # squarecube, and myphpadmin.
 
@@ -16,20 +16,6 @@ NEW_HOSTNAME='husker.mikesoh.com'
 # Branch name is declared in the userdata.sh file, where this bootstrap
 # is initially loaded.
 echo BRANCH_NAME: ${BRANCH_NAME}
-echo Downloading your bootstrap tarball version ${BRANCH_NAME}.  
-echo     It will be placed in /tmp
-curl -LkSs https://api.github.com/repos/sohmc/aws-bootstrap/tarball/${BRANCH_NAME} -o /tmp/master.tar.gz
-
-echo Untarring the tarball.
-tar -xzf /tmp/master.tar.gz -C /tmp
-
-
-#### Add Additional Repositories ####
-echo Adding repositories declared in the ./repositories directory
-for f in $( ls /tmp/sohmc-aws-bootstrap-*/repositories/*.sh ); do
-    echo Running Script $f
-    bash $f
-done
 
 # Update apt-get
 echo Updating apt-get repositories
@@ -42,7 +28,7 @@ DEBIAN_FRONTEND=noninteractive apt-get upgrade -yq
 
 # Install pre-requisits
 echo Installing AWS CLI
-apt-get install -yqq awscli
+apt-get install -yqq awscli python3
 
 # Install SSH deployment keys
 echo Downloading git deployment keys from S3
@@ -76,12 +62,6 @@ sed -ri 's/^(127.0.0.1)\s+(\w+)$/\1 '"${NEW_HOSTNAME}"'/' /etc/hosts
 # Populate SSH Server Keys
 echo Getting SSH Host keys for bitbucket and github
 ssh-keyscan github.com bitbucket.org >> ~/.ssh/known_hosts
-
-echo Processing package bash files in alphabetical order
-for f in $( ls /tmp/sohmc-aws-bootstrap-*/packages/*.sh ); do
-    echo Running Script $f
-    bash $f
-done
 
 echo cloud-init userdata processed.
 echo Setting shutdown for 2 hours in case I forget...
