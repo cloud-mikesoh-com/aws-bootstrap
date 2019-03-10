@@ -5,7 +5,7 @@ if [ -e tmp.json ]; then
 fi
 
 echo Generating userdata...
-sed -r 's/\"\$USERDATA\"/\"'"${USERDATA}"'\"/' ./ec2_t2-micro.json > tmp.json
+sed -r 's/\"\$USERDATA\"/\"'"${USERDATA}"'\"/' ./ec2_t3-micro.json > tmp.json
 
 echo Requesting spot instance...
 aws ec2 request-spot-instances --spot-price 0.0116 --type "one-time" \
