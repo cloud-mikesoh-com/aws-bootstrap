@@ -19,4 +19,4 @@ Currently, this deployment script uses the following AMI:
 * Release date: 20190212.1
 
 In theory, you should be able to use this script against any current
-Ubuntu AMI, but it is tested against the above details.
+Ubuntu AMI, but it is tested against the image listed above.
