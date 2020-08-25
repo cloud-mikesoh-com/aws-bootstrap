@@ -28,7 +28,11 @@ DEBIAN_FRONTEND=noninteractive apt-get upgrade -yq
 
 # Install pre-requisits
 echo Installing AWS CLI
-apt-get install -yqq awscli python3
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+aws --version
 
 # Install SSH deployment keys
 echo Downloading git deployment keys from S3
