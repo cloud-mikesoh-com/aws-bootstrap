@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FILE=./windows.ps
-LAUNCH_CONFIG=./ec2-windowsServer2020-t3-medium.json
+LAUNCH_CONFIG=./ec2-windowsServer2019-t3-medium.json
 
 run_me () {
     USERDATA=`cat ${FILE} | base64 -w 0`
