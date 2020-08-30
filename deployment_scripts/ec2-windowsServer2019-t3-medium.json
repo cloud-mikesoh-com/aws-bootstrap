@@ -1,6 +1,6 @@
 {
   "ImageId": "ami-032c2c4b952586f02",
-  "KeyName": "mike@starbuck (2016 Jun 24 0725)",
+  "KeyName": "digger",
   "SecurityGroupIds": ["sg-f9519788"],
   "InstanceType": "t3a.medium",
   "BlockDeviceMappings": [
