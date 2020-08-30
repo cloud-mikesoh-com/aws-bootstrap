@@ -5,13 +5,13 @@ However, I've started playing around a Windows Server 2019 instance.
 
 All AMIs are provided in the `us-east-1` availability zone.
 
-# Ubuntu Linux
+## Ubuntu Linux
 
 This script relies upon private repositories and assumes that the ssh
 key it is assigned can pull from those private repositories.
 
 This `README` is provided to track the current version of the Ubuntu AMI
-that is used in the `[ec2-ubuntu-t3-micro.json](ec2-ubuntu-t3-micro.json)` 
+that is used in the [`ec2-ubuntu-t3-micro.json`](ec2-ubuntu-t3-micro.json)
 file.  Since Amazon does not keep track of historical AMIs, it's left to 
 third parties.  Fortunately, [Ubuntu has a website dedicated to their 
 AMIs](https://cloud-images.ubuntu.com/locator/ec2/).
@@ -28,7 +28,7 @@ In theory, you should be able to use this script against any current
 Ubuntu AMI, but it is tested against the image listed above.
 
 
-# Windows Server 2019
+## Windows Server 2019
 
 The windows deployment script doesn't do much right now.  But at
 current, the deployment script uses the following AMI:
