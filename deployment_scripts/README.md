@@ -12,11 +12,11 @@ All AMIs are provided in the `us-east-1` availability zone.
 
 Currently, this deployment script uses the following AMI:
 
-* AMI ID: ami-0a313d6098716f372
-* Name: bionic beaver
-* Version: 18.04 LTS amd64
+* AMI ID: ami-0dd76f917833aac4b
+* Name: focal fossa
+* Version: 20.04 LTS amd64
 * Instance Type: hvm:ebs-ssd
-* Release date: 20190212.1
+* Release date: 20210621
 
 In theory, you should be able to use this script against any current
 Ubuntu AMI, but it is tested against the image listed above.
