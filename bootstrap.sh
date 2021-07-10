@@ -24,7 +24,10 @@ apt-get update -yqq
 # Install all patches as necessary, assuming 'y' to questions, and
 # supressing output
 echo Upgrade all available packages
-DEBIAN_FRONTEND=noninteractive apt-get upgrade -yq
+DEBIAN_FRONTEND=noninteractive apt-get upgrade -yqq
+
+echo Install zip and unzip
+apt-get install -yqq zip unzip
 
 # Install pre-requisits
 echo Installing AWS CLI
@@ -51,9 +54,9 @@ chmod 600 ~/.ssh/id_rsa
 echo Downloading authorized_keys from github
 curl "https://github.com/sohmc/ssh-keys/releases/download/latest/authorized_keys" \
     -o "/tmp/authorized_keys" && \
-    rm ~/.ssh/authorized_keys && \
-    mv /tmp/authorized_keys ~/.ssh/authorized_keys && \
-    chmod 600 ~/.ssh/authorized_keys
+    rm ~ubuntu/.ssh/authorized_keys && \
+    mv /tmp/authorized_keys ~ubuntu/.ssh/authorized_keys && \
+    chmod 600 ~ubuntu/.ssh/authorized_keys
 
 # Set hostname
 # Instructions on how to do this without restarting:
