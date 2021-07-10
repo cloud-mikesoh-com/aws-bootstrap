@@ -10,7 +10,7 @@ instance's "User Data" prompt:
 
 ```
 !#/bin/bash
-bash <(curl -s https://raw.githubusercontent.com/sohmc/aws-bootstrap/master/bootstrap.sh)
+bash <(curl -s https://raw.githubusercontent.com/sohmc/aws-bootstrap/main/bootstrap.sh)
 ```
 
 
