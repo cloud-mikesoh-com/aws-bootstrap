@@ -56,7 +56,7 @@ curl -L "https://github.com/sohmc/ssh-keys/releases/download/latest/authorized_k
     -o "/tmp/authorized_keys" && \
     rm ~ubuntu/.ssh/authorized_keys && \
     mv /tmp/authorized_keys ~ubuntu/.ssh/authorized_keys && \
-    chown ubuntu:ubuntu ~ubuntu/.ssh/authorized_keys
+    chown ubuntu:ubuntu ~ubuntu/.ssh/authorized_keys && \
     chmod 600 ~ubuntu/.ssh/authorized_keys
 
 # Set hostname
