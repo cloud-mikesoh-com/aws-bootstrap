@@ -52,7 +52,7 @@ chmod 600 ~/.ssh/id_rsa
 
 # Install authorized keys
 echo Downloading authorized_keys from github
-curl "https://github.com/sohmc/ssh-keys/releases/download/latest/authorized_keys" \
+curl -L "https://github.com/sohmc/ssh-keys/releases/download/latest/authorized_keys" \
     -o "/tmp/authorized_keys" && \
     rm ~ubuntu/.ssh/authorized_keys && \
     mv /tmp/authorized_keys ~ubuntu/.ssh/authorized_keys && \
