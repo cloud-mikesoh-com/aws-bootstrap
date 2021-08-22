@@ -55,7 +55,7 @@ tar -xzf /tmp/repo.tar.gz -C /tmp
 
 if [[ -z ${PROFILE+x} ]]; then
   echo "No profile declared.  No further processing being performed."
-else if [[ -f /tmp/cloud-mikesoh-com-aws-bootstrap-*/profiles/${PROFILE}.bash} ]]; then
+elif [[ -f /tmp/cloud-mikesoh-com-aws-bootstrap-*/profiles/${PROFILE}.bash} ]]; then
   echo "Running ${PROFILE}.bash"
   source /tmp/cloud-mikesoh-com-aws-bootstrap-*/profiles/${PROFILE}.bash
 fi
