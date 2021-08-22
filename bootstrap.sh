@@ -59,6 +59,7 @@ elif [[ -f "/tmp/cloud-mikesoh-com-aws-bootstrap-*/profiles/${PROFILE}.bash" ]];
   echo "Running ${PROFILE}.bash"
   source /tmp/cloud-mikesoh-com-aws-bootstrap-*/profiles/${PROFILE}.bash
 else 
+  ls -l /tmp/cloud-mikesoh-com-aws-bootstrap-*/profiles/${PROFILE}.bash
   echo "Profile ${PROFILE} not found.  No further processing being performed."
 fi
 
