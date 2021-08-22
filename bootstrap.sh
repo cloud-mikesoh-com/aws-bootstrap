@@ -2,11 +2,6 @@
 
 # AWS Bootstrap
 # By Michael Soh
-#
-# This bootstrap installs MySQL and Docker.  Docker is used to 
-# install an apache web server with PHP, which then serve 
-# all of my PHP projects, such as my mail aliases program, 
-# squarecube, and myphpadmin.
 
 
 #### VARIABLE DECLARATION ####
