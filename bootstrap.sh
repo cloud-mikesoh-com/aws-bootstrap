@@ -47,7 +47,7 @@ ssh-keyscan github.com bitbucket.org >> ~/.ssh/known_hosts
 
 # Download git repository
 echo Downloading your bootstrap tarball version ${BRANCH_NAME}.  
-echo     It will be placed in /tmp
+echo     It will be placed in /tmp/repo
 curl -LkSs https://api.github.com/repos/cloud-mikesoh-com/aws-bootstrap/tarball/${BRANCH_NAME} -o /tmp/repo.tar.gz
 
 mkdir /tmp/repo
