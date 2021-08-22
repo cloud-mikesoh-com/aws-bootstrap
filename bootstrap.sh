@@ -48,16 +48,16 @@ ssh-keyscan github.com bitbucket.org >> ~/.ssh/known_hosts
 # Download git repository
 echo Downloading your bootstrap tarball version ${BRANCH_NAME}.  
 echo     It will be placed in /tmp
-curl -LkSs https://api.github.com/repos/sohmc/aws-bootstrap/tarball/${BRANCH_NAME} -o /tmp/repo.tar.gz
+curl -LkSs https://api.github.com/repos/cloud-mikesoh-com/aws-bootstrap/tarball/${BRANCH_NAME} -o /tmp/repo.tar.gz
 
 echo Untarring the tarball.
 tar -xzf /tmp/repo.tar.gz -C /tmp
 
 if [[ -z ${PROFILE+x} ]]; then
   echo "No profile declared.  No further processing being performed."
-else if [[ -f /tmp/sohmc-aws-bootstrap-*/profiles/${PROFILE}.bash} ]]; then
+else if [[ -f /tmp/cloud-mikesoh-com-aws-bootstrap-*/profiles/${PROFILE}.bash} ]]; then
   echo "Running ${PROFILE}.bash"
-  source /tmp/sohmc-aws-bootstrap-*/profiles/${PROFILE}.bash
+  source /tmp/cloud-mikesoh-com-aws-bootstrap-*/profiles/${PROFILE}.bash
 fi
 
 echo cloud-init userdata processed.
