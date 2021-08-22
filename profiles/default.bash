@@ -2,4 +2,4 @@
 
 echo "Running default install"
 
-source /tmp/cloud-mikesoh-com-aws-bootstrap-*/packages/02-sohmc-public-keys.sh
+source /tmp/repo/${REPO_DIR}/packages/02-sohmc-public-keys.sh

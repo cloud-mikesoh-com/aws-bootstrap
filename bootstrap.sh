@@ -50,16 +50,19 @@ echo Downloading your bootstrap tarball version ${BRANCH_NAME}.
 echo     It will be placed in /tmp
 curl -LkSs https://api.github.com/repos/cloud-mikesoh-com/aws-bootstrap/tarball/${BRANCH_NAME} -o /tmp/repo.tar.gz
 
+mkdir /tmp/repo
+
 echo Untarring the tarball.
-tar -xzf /tmp/repo.tar.gz -C /tmp
+tar -xzf /tmp/repo.tar.gz -C /tmp/repo
+export REPO_DIR=`ls /tmp/repo`
 
 if [[ -z ${PROFILE+x} ]]; then
   echo "No profile declared.  No further processing being performed."
-elif [[ -f "/tmp/cloud-mikesoh-com-aws-bootstrap-*/profiles/${PROFILE}.bash" ]]; then
+elif [[ -f "/tmp/repo/${REPO_DIR}/profiles/${PROFILE}.bash" ]]; then
   echo "Running ${PROFILE}.bash"
-  source /tmp/cloud-mikesoh-com-aws-bootstrap-*/profiles/${PROFILE}.bash
+  source /tmp/repo/${REPO_DIR}/profiles/${PROFILE}.bash
 else 
-  ls -l /tmp/cloud-mikesoh-com-aws-bootstrap-*/profiles/${PROFILE}.bash
+  ls -l /tmp/repo/${REPO_DIR}/profiles/${PROFILE}.bash
   echo "Profile ${PROFILE} not found.  No further processing being performed."
 fi
 
