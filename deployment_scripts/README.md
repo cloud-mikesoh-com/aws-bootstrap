@@ -12,11 +12,11 @@ All AMIs are provided in the `us-east-1` availability zone.
 
 Currently, this deployment script uses the following AMI:
 
-* AMI ID: ami-0dd76f917833aac4b
+* AMI ID: ami-036490d46656c4818
 * Name: focal fossa
 * Version: 20.04 LTS amd64
 * Instance Type: hvm:ebs-ssd
-* Release date: 20210621
+* Release date: 20211001
 
 In theory, you should be able to use this script against any current
 Ubuntu AMI, but it is tested against the image listed above.
