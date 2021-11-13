@@ -1,5 +1,5 @@
 {
-  "ImageId": "ami-0dd76f917833aac4b",
+  "ImageId": "ami-036490d46656c4818",
   "KeyName": "starbuck-wsl-ubuntu-rsa-4096-2021.07.10",
   "SecurityGroupIds": ["sg-2bc94f4f", "sg-f9519788"],
   "InstanceType": "t3a.micro",

@@ -2,7 +2,8 @@
 
 # This file should be copied into the User Data section of creating AWS
 # EC2 instances.
-BRANCH_NAME="main"
+export BRANCH_NAME="main"
+export PROFILE="docker"
 BOOTSTRAP_FILE="https://raw.githubusercontent.com/sohmc/aws-bootstrap/${BRANCH_NAME}/bootstrap.sh"
 
 # If you want to set the instance with a hostname, uncomment the following

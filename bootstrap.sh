@@ -2,11 +2,6 @@
 
 # AWS Bootstrap
 # By Michael Soh
-#
-# This bootstrap installs MySQL and Docker.  Docker is used to 
-# install an apache web server with PHP, which then serve 
-# all of my PHP projects, such as my mail aliases program, 
-# squarecube, and myphpadmin.
 
 
 #### VARIABLE DECLARATION ####
@@ -26,23 +21,45 @@ echo Upgrade all available packages
 DEBIAN_FRONTEND=noninteractive apt-get upgrade -yqq
 
 
-# Install SSH deployment keys
-echo Downloading git deployment keys from S3
-aws s3 cp s3://mikesoh.com-galactica-backup/ssh_keys/bitbucket-deployment-keys/ ~/.ssh/ --recursive --quiet
-
-echo `ls -1 ~/.ssh/id_rsa* | wc -l` files downloaded.
-echo Public key as follows:
-echo ""
-cat ~/.ssh/id_rsa.pub
-echo ""
-
-echo Making the private key readable by owner only.
-chmod 600 ~/.ssh/id_rsa
-
-
 # Populate SSH Server Keys
 echo Getting SSH Host keys for bitbucket and github
 ssh-keyscan github.com bitbucket.org >> ~/.ssh/known_hosts
+
+
+# Install SSH deployment keys
+# echo Downloading git deployment keys from S3
+# aws s3 cp s3://mikesoh.com-galactica-backup/ssh_keys/bitbucket-deployment-keys/ ~/.ssh/ --recursive --quiet
+
+# echo `ls -1 ~/.ssh/id_rsa* | wc -l` files downloaded.
+# echo Public key as follows:
+# echo ""
+# cat ~/.ssh/id_rsa.pub
+# echo ""
+
+# echo Making the private key readable by owner only.
+# chmod 600 ~/.ssh/id_rsa
+
+
+# Download git repository
+echo Downloading your bootstrap tarball version ${BRANCH_NAME}.  
+echo     It will be placed in /tmp/repo
+curl -LkSs https://api.github.com/repos/cloud-mikesoh-com/aws-bootstrap/tarball/${BRANCH_NAME} -o /tmp/repo.tar.gz
+
+mkdir /tmp/repo
+
+echo Untarring the tarball.
+tar -xzf /tmp/repo.tar.gz -C /tmp/repo
+export REPO_DIR=`ls /tmp/repo`
+
+if [[ -z ${PROFILE+x} ]]; then
+  echo "No profile declared.  No further processing being performed."
+elif [[ -f "/tmp/repo/${REPO_DIR}/profiles/${PROFILE}.bash" ]]; then
+  echo "Running ${PROFILE}.bash"
+  source /tmp/repo/${REPO_DIR}/profiles/${PROFILE}.bash
+else 
+  ls -l /tmp/repo/${REPO_DIR}/profiles/${PROFILE}.bash
+  echo "Profile ${PROFILE} not found.  No further processing being performed."
+fi
 
 echo cloud-init userdata processed.
 echo Setting shutdown for 2 hours in case I forget...
