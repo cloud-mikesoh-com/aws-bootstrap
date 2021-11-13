@@ -2,7 +2,7 @@
 
 # This file should be copied into the User Data section of creating AWS
 # EC2 instances.
-export BRANCH_NAME="redo-autodeployments"
+export BRANCH_NAME="main"
 export PROFILE="docker"
 BOOTSTRAP_FILE="https://raw.githubusercontent.com/sohmc/aws-bootstrap/${BRANCH_NAME}/bootstrap.sh"
 
