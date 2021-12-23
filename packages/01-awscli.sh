@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -xe
 
 #### VARIABLE DECLARATION ####
 PACKAGE_VERSION='1.0.0'
@@ -12,6 +12,6 @@ apt-get install -yqq zip unzip
 echo Downloading awscliv2
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
-sudo ./aws/install
+./aws/install
 
 aws --version
