@@ -4,7 +4,7 @@
 # EC2 instances.
 export BRANCH_NAME="main"
 export PROFILE="docker"
-BOOTSTRAP_FILE="https://raw.githubusercontent.com/sohmc/aws-bootstrap/${BRANCH_NAME}/bootstrap.sh"
+BOOTSTRAP_FILE="https://raw.githubusercontent.com/cloud-mikesoh-com/aws-bootstrap/${BRANCH_NAME}/bootstrap.sh"
 
 # If you want to set the instance with a hostname, uncomment the following
 # the following two lines
