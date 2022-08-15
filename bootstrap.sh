@@ -26,20 +26,6 @@ echo Getting SSH Host keys for bitbucket and github
 ssh-keyscan github.com bitbucket.org >> ~/.ssh/known_hosts
 
 
-# Install SSH deployment keys
-# echo Downloading git deployment keys from S3
-# aws s3 cp s3://mikesoh.com-galactica-backup/ssh_keys/bitbucket-deployment-keys/ ~/.ssh/ --recursive --quiet
-
-# echo `ls -1 ~/.ssh/id_rsa* | wc -l` files downloaded.
-# echo Public key as follows:
-# echo ""
-# cat ~/.ssh/id_rsa.pub
-# echo ""
-
-# echo Making the private key readable by owner only.
-# chmod 600 ~/.ssh/id_rsa
-
-
 # Download git repository
 echo Downloading your bootstrap tarball version ${BRANCH_NAME}.  
 echo     It will be placed in /tmp/repo
