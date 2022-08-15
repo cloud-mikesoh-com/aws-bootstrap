@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -xe
 
 # AWS Bootstrap
 # By Michael Soh
