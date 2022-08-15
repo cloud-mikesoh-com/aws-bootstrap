@@ -2,7 +2,7 @@
 
 echo "Installing MariaDB --Client--"
 
-apt-get install -y mariadb-client
+DEBIAN_FRONTEND=noninteractive apt-get install -y mariadb-client
 
 mariadb --version
 
