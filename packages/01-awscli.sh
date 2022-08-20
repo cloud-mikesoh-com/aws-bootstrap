@@ -6,12 +6,9 @@ PACKAGE_VERSION='1.0.0'
 echo Install prerequisite unzip
 apt-get install -yqq zip unzip
 
-if [[ -z "$AMI_ARCH" ]] then
-  echo "Setting AMI_ARCH to amd64"
-  AMI_ARCH="amd64"
-else 
-  echo "AMI_ARCH set to ${AMI_ARCH}"
-fi
+AMI_ARCH=`dpkg --print-architecture`
+echo "AMI_ARCH set to ${AMI_ARCH}"
+
 
 if [[ $AMI_ARCH -eq "amd64" ]] then  
   CURL_URL="https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip"
