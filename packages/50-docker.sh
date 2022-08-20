@@ -10,10 +10,9 @@ echo "Inspecting fingerprint..."
 apt-key fingerprint 0EBFCD88
 
 echo "Adding repository docker repository to apt..."
-add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 echo "Refreshing apt-get..."
 DEBIAN_FRONTEND=noninteractive apt-get update -yqq
