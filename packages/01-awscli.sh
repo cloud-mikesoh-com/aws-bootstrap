@@ -10,9 +10,9 @@ AMI_ARCH=`dpkg --print-architecture`
 echo "AMI_ARCH set to ${AMI_ARCH}"
 
 
-if [[ $AMI_ARCH -eq "amd64" ]]; then  
+if [[ $AMI_ARCH == "amd64" ]]; then  
   CURL_URL="https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip"
-elif [[ $AMI_ARCH -eq "arm64" ]]; then
+elif [[ $AMI_ARCH == "arm64" ]]; then
   CURL_URL="https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip"
 fi
 
