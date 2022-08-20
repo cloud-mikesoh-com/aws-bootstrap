@@ -3,11 +3,8 @@
 echo "----- DOCKER REPOSITORY -----"
 
 echo "Downloading Docker\'s official GPG key..."
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
-    apt-key add -
-
-echo "Inspecting fingerprint..."
-apt-key fingerprint 0EBFCD88
+mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
 echo "Adding repository docker repository to apt..."
 echo \
@@ -16,7 +13,6 @@ echo \
 
 echo "Refreshing apt-get..."
 DEBIAN_FRONTEND=noninteractive apt-get update -yqq
-
 
 echo "Installing docker and docker-compose"
 DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
