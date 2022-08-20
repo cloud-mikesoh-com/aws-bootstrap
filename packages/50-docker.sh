@@ -1,4 +1,6 @@
 #!/bin/bash
+# Transposed instructions from here: 
+# https://docs.docker.com/engine/install/ubuntu/
 
 echo "----- DOCKER REPOSITORY -----"
 
