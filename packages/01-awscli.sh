@@ -1,7 +1,7 @@
 #!/bin/bash -xe
 
 #### VARIABLE DECLARATION ####
-PACKAGE_VERSION='1.0.0'
+PACKAGE_VERSION='1.1.0'
 
 echo Install prerequisite unzip
 apt-get install -yqq zip unzip
@@ -19,8 +19,8 @@ fi
 # For the latest version of the AWS CLI, see:
 # http://docs.aws.amazon.com/cli/latest/userguide/installing.html
 echo Downloading awscliv2
-curl ${CURL_URL} -o "awscliv2.zip"
-unzip awscliv2.zip
-./aws/install
+curl ${CURL_URL} -o "/tmp/awscliv2.zip"
+unzip /tmp/awscliv2.zip -d "/tmp/awscliv2"
+/tmp/awscliv2/aws/install
 
 aws --version
