@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #### VARIABLE DECLARATION ####
-POSTFIX_REPO='git@bitbucket.org:sohmc/postfix-config.git'
+POSTFIX_REPO='git@github.com:cloud-mikesoh-com/caprica-configuration.git'
 
 
 # Install Postfix

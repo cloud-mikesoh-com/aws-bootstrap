@@ -22,8 +22,8 @@ DEBIAN_FRONTEND=noninteractive apt-get upgrade -yqq
 
 
 # Populate SSH Server Keys
-echo Getting SSH Host keys for bitbucket and github
-ssh-keyscan github.com bitbucket.org >> ~/.ssh/known_hosts
+echo Getting SSH Host keys for github
+ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 
 # Download git repository
